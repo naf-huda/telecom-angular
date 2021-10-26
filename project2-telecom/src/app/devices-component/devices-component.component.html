@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Phone Number</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>        <!-- *ngFor="let device of devices" --> <!-- IMPLEMENT NGFOR WHEN DATABASE IS CONNECTED -->
+            <td>{{device.id}}</td>
+            <td>{{device.phoneNum}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- 
+    CLICKING A DEVICE WILL OPEN A FORM FOR THEM TO CHANGE THE PLAN AND NUMBER 
+    WHEN THE USER CLICKS SUBMIT 
+        SEND DATA TO DATABASE
+        UPDATE THE DEVICES PAGE
+        SEND USER TO REFRESHED DEVICES PAGE
+-->

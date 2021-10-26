@@ -1,0 +1,28 @@
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Plan Type</td>
+            <td>Number of Devices</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>        <!--*ngFor="let plan of plans"--> <!-- IMPLEMENT NGFOR WHEN DATABASE IS CONNECTED -->
+            <td>{{plan.id}}</td>
+            <td>{{plan.name}}</td>
+            <td>{{plan.planType}}</td>
+            <td>{{plan.numDevices}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- 
+    MAKE THE PLANS PAGE HAVE INTERACTABLE PLAN OPTIONS 
+    CLICKING A PLAN WILL TAKE YOU TO A NEW PAGE WITH A FORM TO FILL OUT 
+    WHEN THE USER CLICKS SUBMIT
+        SEND DATA TO DATABASE
+        SEND USER TO DEVICES OR VIEW BILL PAGE
+        CLEAR FORM AND RESET PLANS PAGE
+-->
