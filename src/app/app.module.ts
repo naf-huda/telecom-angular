@@ -7,6 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DevicesComponentComponent } from './devices-component/devices-component.component';
 import { PlansComponentComponent } from './plans-component/plans-component.component';
+import { HomeComponent } from './home/home.component';
+import { BillComponent } from './bill/bill.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 // IMPLEMENT THE COMPONENTS HERE FOR HOME, VIEW BILL, AND PAGENOTFOUND
 
 
@@ -15,9 +18,10 @@ import { PlansComponentComponent } from './plans-component/plans-component.compo
     AppComponent,
     DevicesComponentComponent,
     PlansComponentComponent,
-    // ADD HOME COMPONENT HERE
-    // ADD VIEW BILL COMPONENT HERE
-    // ADD PAGENOTFOUND COMPONENT HERE
+    HomeComponent,
+    BillComponent,
+    PageNotFoundComponent,
+    
   ],
   imports: [
     BrowserModule,
