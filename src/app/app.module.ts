@@ -10,7 +10,6 @@ import { PlansComponentComponent } from './plans-component/plans-component.compo
 import { HomeComponent } from './home/home.component';
 import { BillComponent } from './bill/bill.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-// IMPLEMENT THE COMPONENTS HERE FOR HOME, VIEW BILL, AND PAGENOTFOUND
 
 
 @NgModule({

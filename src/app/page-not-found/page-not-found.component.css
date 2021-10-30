@@ -1,0 +1,25 @@
+.PNFPage {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid gray;
+    background-color: rgb(246, 246, 246);
+    padding: 35px;
+    position: sticky;
+    margin-top: 50px;
+    width: 600px;
+    height: 160px;
+    border-radius: 18px;
+    font-size: x-large;
+  }
+
+  #PNFImg {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  @media screen and (max-width: 700px) {
+      .PNFPage {
+          width: auto;
+      }
+  }

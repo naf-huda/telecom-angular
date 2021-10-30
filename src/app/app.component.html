@@ -1,18 +1,31 @@
-<div>
-  <h1>{{title}}</h1>
+<head>
+  <meta charset="ISO-8859-1" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.component.css">
+</head>
 
-  <nav>
-    <!-- Link to the other sections -->
-    <!-- HOME LINK -->
-    <a routerLink='/home'>Home</a>
-    <a routerLink='/plans-component'>Manage Plans</a>
-    <a routerLink='/devices-component'>Manage Devices</a>
-    <a routerLink='/bill'>View Bill</a>
-    <!-- VIEW BILL LINK -->
-  </nav>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <h2 id="title">Telecom Project</h2>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a routerLink='/home' class="nav-link active" id="Home" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink='/devices-component' class="nav-link active" id="Devices" href="#">Manage Devices</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink='/plans-component' class="nav-link active" id="Plans" href="#">Manage Plans</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink='/bill' class="nav-link active" id="Bill" href="#">View Bill</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <!-- Display the nav component -->
-  <!-- THIS IS HOW YOU IMPLEMENT THE NAV BUTTONS TO WORK PROPERLY-->
-  <router-outlet></router-outlet>
-  
-</div>
+<router-outlet></router-outlet>
