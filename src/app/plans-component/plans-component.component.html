@@ -1,23 +1,3 @@
-<table>
-    <thead>
-        <tr>
-            <td>ID</td>
-            <td>Name</td>
-            <td>Plan Type</td>
-            <td>Number of Devices</td>
-        </tr>
-    </thead>
-
-    <tbody>
-        <tr>        <!--*ngFor="let plan of plans"--> <!-- IMPLEMENT NGFOR WHEN DATABASE IS CONNECTED -->
-            <td>{{plan.id}}</td>
-            <td>{{plan.name}}</td>
-            <td>{{plan.planType}}</td>
-            <td>{{plan.numDevices}}</td>
-        </tr>
-    </tbody>
-</table>
-
 <!-- 
     MAKE THE PLANS PAGE HAVE INTERACTABLE PLAN OPTIONS 
     CLICKING A PLAN WILL TAKE YOU TO A NEW PAGE WITH A FORM TO FILL OUT 
@@ -26,3 +6,190 @@
         SEND USER TO DEVICES OR VIEW BILL PAGE
         CLEAR FORM AND RESET PLANS PAGE
 -->
+
+<div class="container-fluid Plans">
+    <div>
+        <h1>Plan Tiers</h1>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h2>Titan Single </h2>
+            <h3>$75</h3>
+            <h4>per month for a single line</h4>
+            <div>
+                <ul>
+                    <li>5G Nationwide Access</li>
+                    <li>Unlimited talk+data</li>
+                    <li>International Texting</li>
+                </ul>
+            </div>
+            <!-- Button Trigger Modal -->
+           <div class="btn-text-center">
+                <button type="button" class="btn btn-dark" data-toggle="modal"
+                data-target="#PlanModal1">
+                    Add plan
+                </button>
+           </div>
+
+           <!-- Modal Window -->
+           <div class="modal" id="PlanModal1" tabindex="-1" aria-labelledby="PlanModal1Label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="PlanModal1Label">Plan 1</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            ...
+                            <!-- FORM FOR ADDING DEVICES TO A PLAN -->
+                            <!--
+                               <form>
+                                   <div class="form group">
+                                       <label>Device #</label>
+                                       <input type="number" class="form-control">
+                                   </div>
+
+                                   <button type="submit" id="plan1Submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            -->
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+           </div>
+            
+        </div>
+
+        <div class="column">
+            <h2>Titan Couple </h2>
+            <h3>$60</h3>
+            <h4>per month for two lines</h4>
+            <div>
+                <ul>
+                    <li>5G Nationwide Access</li>
+                    <li>Unlimited talk+data</li>
+                    <li>International Texting</li>
+                </ul>
+            </div>
+
+             <!-- Button Trigger Modal -->
+           <div class="btn-text-center">
+            <button type="button" class="btn btn-dark" data-toggle="modal"
+            data-target="#planModal2">
+                Add plan
+            </button>
+            </div>
+
+            <!-- Modal Window -->
+           <div class="modal" id="planModal2" tabindex="-1" aria-labelledby="planModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="planModal2Label">Plan 2</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        ...
+                         <!-- FORM FOR ADDING TWO DEVICES TO A PLAN -->
+                            <!--
+                               <form>
+                                   <div class="form group">
+                                       <label>Device 1 #</label>
+                                       <input type="number" class="form-control">
+                                   </div>
+                                   <div class="form group">
+                                       <label>Device 2 #</label>
+                                       <input type="number" class="form-control">
+                                   </div>
+
+                                   <button type="submit" id="plan2Submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            -->
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+       </div>
+        
+
+        </div>
+
+        <div class="column">
+            <h2>Titan Family </h2>
+            <h3>$45</h3>
+            <h4>per month for four lines</h4>
+            <div>
+                <ul>
+                    <li>5G Nationwide Access</li>
+                    <li>Unlimited talk+data</li>
+                    <li>International Texting</li>
+                </ul>
+            </div>
+
+             <!-- Button Trigger Modal -->
+           <div class="btn-text-center">
+            <button type="button" class="btn btn-dark" data-toggle="modal"
+            data-target="#planModal3">
+                Add plan
+            </button>
+            </div>
+
+            <!-- Modal Window -->
+           <div class="modal" id="planModal3" tabindex="-1" aria-labelledby="planModal3Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="planModal3Label">Plan 3</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        ...
+                        <!-- FORM FOR ADDING FOUR DEVICES TO A PLAN -->
+                            <!--
+                               <form>
+                                   <div class="form group">
+                                       <label>Device 1 #</label>
+                                       <input type="number" class="form-control">
+                                   </div>
+                                   <div class="form group">
+                                       <label>Device 2 #</label>
+                                       <input type="number" class="form-control">
+                                   </div>
+                                   <div class="form group">
+                                       <label>Device 3 #</label>
+                                       <input type="number" class="form-control">
+                                   </div>
+                                   <div class="form group">
+                                       <label>Device 4 #</label>
+                                       <input type="number" class="form-control">
+                                   </div>
+
+                                   <button type="submit" id="plan3Submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            -->
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+       </div>
+        
+
+
+        </div>
+    </div>
+</div>

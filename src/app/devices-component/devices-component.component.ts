@@ -12,7 +12,8 @@ export class DevicesComponentComponent implements OnInit {
   // WILL BE REPLACED WITH DATA FROM SPRING 
   device: Devices = {
     id : 1,
-    phoneNum : 1
+    phoneNum : 1,
+   
   }
 
     //devicesList: Devices[]; // NEED TO IMPLEMENT 
