@@ -1,6 +1,9 @@
 export interface Devices {
-    id : number;
-    phoneNum : number;
+    deviceId : number;
+    deviceNumber : String;
+    planId: number;
+    planNumber: number;
+    planCost: number;
 }
 
 // THIS IS THE INTERFACE VERSION FOR DEVICES

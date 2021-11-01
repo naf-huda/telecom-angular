@@ -1,10 +1,16 @@
 export class Devices {
-    id : number;
-    phoneNum : number;
+    deviceId : number;
+    deviceNumber : String;
+    planId : number;
+    planNumber : number;
+    planCost: number;
 
-    constructor(id = 0, phoneNum = 0) {
-        this.id = id;
-        this.phoneNum = phoneNum;
+    constructor(deviceId = 0, deviceNumber = '', planId = 0, planNumber = 0, planCost = 0) {
+        this.deviceId = deviceId;
+        this.deviceNumber = deviceNumber;
+        this.planId = planId;
+        this.planNumber = planNumber;
+        this.planCost = planCost;
     }
 }
 
