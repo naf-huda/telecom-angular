@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Plans } from '../plans';
-import { PlansServiceService } from '../plans-service.service';
+
 
 @Component({
   selector: 'app-plans-component',
@@ -11,12 +10,7 @@ export class PlansComponentComponent implements OnInit {
 
   //plansList: Plans[]; // NEED TO IMPLEMENT 
   // WILL BE REPLACED WITH THE DATA FROM SPRING
-  plan: Plans = { 
-    id : 1,
-    name : 'Plan 1',
-    planType : 1,
-    numDevices : 1
-  }
+
 
   constructor() { }   //private planService: PlansServiceService
 
