@@ -4,7 +4,7 @@
     padding: 35px;
     position: relative;
     margin-top: 50px;
-    width: 800px;
+    width: 1100px;
     height: 450px;
     border-radius: 18px;
     font-size: x-large;
@@ -49,6 +49,18 @@
     font-size: 14px;
   }
 
+  .initpage {
+    background-color: transparent;
+    padding-top: 50px;
+    padding-bottom: 300px;
+  }
   .btn-text-center{
     text-align: center;
+  }
+
+  @media screen and (max-width: 1300px) {
+    .Plans {
+        width: auto;
+        height: auto;
+    }
   }

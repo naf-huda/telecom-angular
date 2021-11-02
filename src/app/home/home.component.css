@@ -1,11 +1,15 @@
+.initpage {
+  background-color: transparent;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
 .WelcomePage {
   text-align: center;
-  padding: 5px;
   border: 1px solid gray;
   background-color: rgb(246, 246, 246);
   padding: 35px;
   position: sticky;
-  margin-top: 50px;
   width: 600px;
   height: 160px;
   border-radius: 18px;

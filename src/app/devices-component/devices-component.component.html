@@ -1,52 +1,59 @@
-<table class="table table-bordered">
-    <thead class="thead-dark">
-        <tr>
-            <td>Device #</td>
-            <td>Phone Number</td>
-            <td>Manage</td>
-        </tr>
-    </thead>
+<div class="initpage">
+    <div class="container-fluid DevicesPage">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <td>Device #</td>
+                    <td>Phone Number</td>
+                    <td>Manage</td>
+                </tr>
+            </thead>
 
-    <tbody>
-        <tr>        <!-- *ngFor="let device of devices" --> <!-- IMPLEMENT NGFOR WHEN DATABASE IS CONNECTED -->
-            <td>{{device.deviceId}}</td>
-            <td>{{device.deviceNumber}}</td>
-            <td>
-                <!-- Edit Modal -->
-                <button type="button" class="btn btn-dark" data-toggle="modal"
-                data-target="#planModal1">
-                    Edit
-                </button>
+            <tbody>
+                <tr>
+                    <!-- *ngFor="let device of devices" -->
+                    <!-- IMPLEMENT NGFOR WHEN DATABASE IS CONNECTED -->
+                    <td>{{device.deviceId}}</td>
+                    <td>{{device.deviceNumber}}</td>
+                    <td>
+                        <!-- Edit Modal -->
+                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#planModal1">
+                            Edit
+                        </button>
 
-                <!-- Edit Modal Form -->
-                <div class="modal" id="Edit" tabindex="-1" aria-labelledby="EditLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="EditLable">Plan 1</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
+                        <!-- Edit Modal Form -->
+                        <div class="modal" id="Edit" tabindex="-1" aria-labelledby="EditLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="EditLable">Plan 1</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
 
-                            <div class="modal-body">
-                                Example text
-                                <!-- NEED TO LINK DEVICE# AND PLAN# FOR DISPLAY IN A FORM
+                                    <div class="modal-body">
+                                        Example text
+                                        <!-- NEED TO LINK DEVICE# AND PLAN# FOR DISPLAY IN A FORM
                                     DEVICE# CAN BE CHANGED BUT PLAN# CANNOT BE CHANGED
                                 -->
-                            </div>
+                                    </div>
 
-                            <div class="modal-footer">
-                                <button id="DeleteDevice" type="button" class="btn btn-secondary">Delete</button>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                    <div class="modal-footer">
+                                        <button id="DeleteDevice" type="button"
+                                            class="btn btn-secondary">Delete</button>
+                                        <button type="button" class="btn btn-primary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
-                    </div>
-                </div>
-                
-            </td>
-        </tr>
-    </tbody>
-</table>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <!-- 
     CLICKING A DEVICE WILL OPEN A FORM FOR THEM TO CHANGE THE PLAN AND NUMBER 

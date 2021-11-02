@@ -1,21 +1,49 @@
-<table class="table table-bordered">
-    <thead class="thead-dark">
-        <tr>
-            <td>Device #</td>
-            <td>Plan #</td>
-            <td> Cost</td>
-        </tr>
-    </thead>
+<head>
+    <meta charset="ISO-8859-1" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bill.component.css">
+</head>
 
-    <tbody>
-        <tr> 
-            <!-- <td>{bill.phoneNumber}-->
-            <!-- <td>{bill.planNumber}-->
-            <!-- <td>{{bill.planCost}}</td> -->
-        </tr>
-    </tbody>
 
-    <!-- Total Bill Box -->
-    
-</table>
+<div class="initpage">
+    <div class="container-fluid BillPage">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <td>Device Phone #</td>
+                    <td>Plan #</td>
+                    <td>Cost</td>
+                </tr>
+            </thead>
 
+            <tbody>
+                <tr>
+                    <td>{{bill.phoneNumber}}</td>
+                    <td>{{bill.planNumber}}</td>
+                    <td>{{bill.planCost}}</td>
+                </tr>
+                <tr>
+                    <td>{{bill2.phoneNumber}}</td>
+                    <td>{{bill2.planNumber}}</td>
+                    <td>{{bill2.planCost}}</td>
+                </tr>
+                <tr>
+                    <td>{{bill3.phoneNumber}}</td>
+                    <td>{{bill3.planNumber}}</td>
+                    <td>{{bill3.planCost}}</td>
+                </tr>
+                <tr>
+                    <td>{{bill4.phoneNumber}}</td>
+                    <td>{{bill4.planNumber}}</td>
+                    <td>{{bill4.planCost}}</td>
+                </tr>
+
+                <td id="Total">Bill Cost</td>
+                <td id="Total">totalCost</td>
+            </tbody>
+
+            <!-- Total Bill Box -->
+
+        </table>
+
+    </div>
+</div>
