@@ -23,45 +23,42 @@
                         <li>International Texting</li>
                     </ul>
                 </div>
-                <!-- Button Trigger Modal -->
+
+                <!-- Open Modal Form -->
                 <div class="btn-text-center">
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#PlanModal1">
-                        Add plan
+                    <button class="btn btn-dark" (click)="open(AddSingle)">
+                        <i id="AddSingle" class="AddSingleClass"></i>
+                        Add Plan
                     </button>
                 </div>
-
-                <!-- Modal Window -->
-                <div class="modal" id="PlanModal1" tabindex="-1" aria-labelledby="PlanModal1Label" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="PlanModal1Label">Plan 1</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-
-                            <div class="modal-body">
-                                ...
-                                <!-- FORM FOR ADDING DEVICES TO A PLAN -->
-                                <!--
-                               <form>
-                                   <div class="form group">
-                                       <label>Device #</label>
-                                       <input type="number" class="form-control">
-                                   </div>
-
-                                   <button type="submit" id="plan1Submit" class="btn btn-primary">Submit</button>
-                                </form>
-                            -->
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
+                
+                <ng-template #AddSingle let-modal>
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modal-basic-title">Titan Single</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </div>
+                    <div class="modal-body">
+                        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+                            <div class="form-group">
+                                <label for="firstname">Plan 1</label>
+                                <div class="input-group">
+                                    <input id="firstname" name="firstname" class="form-control" ngModel>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Device Number</label>
+                                <div class="input-group">
+                                    <input id="lastname" name="lastname" class="form-control" ngModel>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+                    </div>
+                </ng-template>
 
             </div>
 
@@ -77,50 +74,47 @@
                     </ul>
                 </div>
 
-                <!-- Button Trigger Modal -->
+                <!-- Open Modal Form -->
                 <div class="btn-text-center">
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#planModal2">
-                        Add plan
+                    <button class="btn btn-dark" (click)="openC(AddCouple)">
+                        <i id="AddCouple" class="AddCoupleClass"></i>
+                        Add Plan
                     </button>
                 </div>
-
-                <!-- Modal Window -->
-                <div class="modal" id="planModal2" tabindex="-1" aria-labelledby="planModal2Label" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="planModal2Label">Plan 2</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-
-                            <div class="modal-body">
-                                ...
-                                <!-- FORM FOR ADDING TWO DEVICES TO A PLAN -->
-                                <!--
-                               <form>
-                                   <div class="form group">
-                                       <label>Device 1 #</label>
-                                       <input type="number" class="form-control">
-                                   </div>
-                                   <div class="form group">
-                                       <label>Device 2 #</label>
-                                       <input type="number" class="form-control">
-                                   </div>
-
-                                   <button type="submit" id="plan2Submit" class="btn btn-primary">Submit</button>
-                                </form>
-                            -->
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
+                
+                <ng-template #AddCouple let-modal>
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modal-basic-title">Titan Couple</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </div>
-
+                    <div class="modal-body">
+                        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+                            <div class="form-group">
+                                <label for="firstname">Plan 2</label>
+                                <div class="input-group">
+                                    <input id="firstname" name="firstname" class="form-control" ngModel>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Device Number 1</label>
+                                <div class="input-group">
+                                    <input id="lastname" name="lastname" class="form-control" ngModel>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Device Number 2</label>
+                                <div class="input-group">
+                                    <input id="lastname" name="lastname" class="form-control" ngModel>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+                    </div>
+                </ng-template>
 
             </div>
 
@@ -136,59 +130,53 @@
                     </ul>
                 </div>
 
-                <!-- Button Trigger Modal -->
+                <!-- Open Modal Form -->
                 <div class="btn-text-center">
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#planModal3">
-                        Add plan
+                    <button class="btn btn-dark" (click)="openF(AddFamily)">
+                        <i id="AddFamily" class="AddFamilyClass"></i>
+                        Add Plan
                     </button>
                 </div>
-
-                <!-- Modal Window -->
-                <div class="modal" id="planModal3" tabindex="-1" aria-labelledby="planModal3Label" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="planModal3Label">Plan 3</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-
-                            <div class="modal-body">
-                                ...
-                                <!-- FORM FOR ADDING FOUR DEVICES TO A PLAN -->
-                                <!--
-                               <form>
-                                   <div class="form group">
-                                       <label>Device 1 #</label>
-                                       <input type="number" class="form-control">
-                                   </div>
-                                   <div class="form group">
-                                       <label>Device 2 #</label>
-                                       <input type="number" class="form-control">
-                                   </div>
-                                   <div class="form group">
-                                       <label>Device 3 #</label>
-                                       <input type="number" class="form-control">
-                                   </div>
-                                   <div class="form group">
-                                       <label>Device 4 #</label>
-                                       <input type="number" class="form-control">
-                                   </div>
-
-                                   <button type="submit" id="plan3Submit" class="btn btn-primary">Submit</button>
-                                </form>
-                            -->
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
+                
+                <ng-template #AddFamily let-modal>
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modal-basic-title">Titan Family</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </div>
-
-
+                    <div class="modal-body">
+                        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+                            <div class="form-group">
+                                <label for="firstname">Plan 3</label>
+                                <div class="input-group">
+                                    <input id="firstname" name="firstname" class="form-control" ngModel>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Device Number 1</label>
+                                <div class="input-group">
+                                    <input id="lastname" name="lastname" class="form-control" ngModel>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Device Number 2</label>
+                                <div class="input-group">
+                                    <input id="lastname" name="lastname" class="form-control" ngModel>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Device Number 3</label>
+                                <div class="input-group">
+                                    <input id="lastname" name="lastname" class="form-control" ngModel>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+                    </div>
+                </ng-template>
 
             </div>
         </div>

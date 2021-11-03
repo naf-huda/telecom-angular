@@ -10,6 +10,7 @@ import { PlansComponentComponent } from './plans-component/plans-component.compo
 import { HomeComponent } from './home/home.component';
 import { BillComponent } from './bill/bill.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
