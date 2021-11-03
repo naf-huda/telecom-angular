@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DeviceService } from '../device.service';
+import { Devices } from '../models/devices';
 
 @Component({
   selector: 'app-plans-component',
@@ -14,9 +16,14 @@ export class PlansComponentComponent implements OnInit {
 
   closeResult: String = '';
 
-  constructor(private modalService: NgbModal) { }   //private planService: PlansServiceService
 
+  constructor(private modalService: NgbModal, private service: DeviceService) { }   //private planService: PlansServiceService
+
+  deviceList: Devices[] = []; 
   ngOnInit(): void {
+    this.service.findAll().subscribe(result => {
+      this.deviceList = result;
+    });
     /*this.planService.getAllPlans().subscribe(result => {
       // result will contain our returned array
       this.plansList = result;
@@ -65,5 +72,7 @@ export class PlansComponentComponent implements OnInit {
      // });
     this.modalService.dismissAll(); //dismiss the modal
   }
+
+  
 
 }

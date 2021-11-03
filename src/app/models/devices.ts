@@ -1,6 +1,6 @@
 export class Devices {
     deviceId : number;
-    deviceNumber : String;
+    deviceNumber : string;
     planId : number;
     planNumber : number;
     planCost: number;
