@@ -87,7 +87,7 @@ export class DevicesComponentComponent implements OnInit {
       // Add hyphens 
       //this.rnd = this.rnd.substring(0,3) + '-' + this.rnd.substring(3,6) + '-' + this.rnd.substring(6);
       //return this.rnd
-      let myContainer = document.getElementById('phoneNumber') as HTMLInputElement;
+      let myContainer = document.getElementById('phoneNumber') as HTMLInputElement;   // Add to the input field
       myContainer.value = this.rnd;
 
       this.update(deviceId, this.rnd)
