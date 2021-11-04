@@ -15,43 +15,50 @@
                     <td>{{device.deviceNumber}}</td>
                     <!-- *ngFor="let device of devices" -->
                     <!-- IMPLEMENT NGFOR WHEN DATABASE IS CONNECTED -->
-                
+
                     <td>
                         <!-- Edit Modal -->
-                        <button class="btn btn-dark" (click)="open(EditDevice)">         <!-- data-toggle="modal" data-target="#planModal1" -->
+                        <button class="btn btn-dark" (click)="open(EditDevice)">
+                            <!-- data-toggle="modal" data-target="#planModal1" -->
                             <i id="EditButton" class="EditButtonClass"></i>
                             Edit
                         </button>
 
                         <ng-template #EditDevice let-modal>
                             <div class="modal-header">
-                              <h4 class="modal-title" id="modal-basic-title">Change Phone Number</h4>
-                              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
+                                <h4 class="modal-title" id="modal-basic-title">Change Phone Number</h4>
+                                <button type="button" class="close" aria-label="Close"
+                                    (click)="modal.dismiss('Cross click')">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                             <div class="modal-body">
-                              <form>
-                                <div class="form-group">
-                                  <label for="id">Device ID</label>
-                                  <div class="input-group">
-                                      <input type="number" id="id" class="form-control"
-                                        [(ngModel)]="device.deviceId" name="device.deviceId" [readonly]="true">
-                                  </div>
-                                  <label for="phoneNumber">Phone Number</label>
-                                  <div class="input-group">
-                                    <input type="number" id="phoneNumber" class="form-control" 
-                                        [(ngModel)]="device.deviceNumber" name="device.deviceNumber" #change>
-                                  </div>
-                                </div>
-                              </form>
+                                <form>
+                                    <div class="form-group">
+
+                                        <label for="id">Device ID</label>
+                                        <div class="input-group">
+                                            <input type="number" id="id" class="form-control"
+                                                [(ngModel)]="device.deviceId" name="device.deviceId" [readonly]="true">
+                                        </div>
+
+                                        <label for="phoneNumber">Phone Number</label>
+                                        <div class="input-group">
+                                            <input type="number" id="phoneNumber" class="form-control"
+                                                [(ngModel)]="device.deviceNumber" name="device.deviceNumber" #change>
+                                        </div>
+
+                                    </div>
+                                </form>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-outline-dark" (click)="delete(device.planId)">Delete</button>
-                              <button type="button" class="btn btn-outline-dark" (click)="update(device.deviceId,device.deviceNumber)">Save</button>
-                              <button type="button" class="btn btn-outline-dark" (click)="Random(device.deviceNumber)">Random Phone Number </button>
+                              <button type="submit" class="btn btn-outline-dark"
+                                    (click)="update(device.deviceId,device.deviceNumber)">Save</button>
+                                <button type="button" class="btn btn-outline-dark"
+                                    (click)="Random(device.deviceId)">Random Phone Number </button>
                             </div>
-                          </ng-template>
+                        </ng-template>
 
                         <!-- Edit Modal Form 
                         <div class="modal" id="Edit" tabindex="-1" aria-labelledby="EditLabel" aria-hidden="true">

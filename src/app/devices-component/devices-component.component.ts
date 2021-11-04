@@ -13,9 +13,12 @@ import { DeleteDevice } from '../models/deleteDevice';
 
 export class DevicesComponentComponent implements OnInit {
 
+  @ViewChild('change') deviceNumber:string=''
+
   closeResult: string = '';
 
-  constructor(private service: DeviceService, private modalService: NgbModal) { }   
+  constructor(private service: DeviceService, private modalService: NgbModal) { }
+
   deviceList: Devices[] = []; 
   ngOnInit(): void {
     this.service.findAll().subscribe((data) => {
@@ -69,12 +72,12 @@ export class DevicesComponentComponent implements OnInit {
       this.service.updatePhoneNumber(this.updatedDevice).subscribe(result => {
         console.log(result);
       });
-      this.modalService.dismissAll("Updated!");
+      this.modalService.dismissAll("Updated!"); // closes the form after submitting, and updates the table 
     }
 
-    rnd: string = '';
+    rnd: string | undefined = '';
     
-    Random(deviceNumber: string) {
+    Random(deviceId: number) {
       // first 3 digits 
       const base = 3470000000;
       // compute phone number
@@ -83,7 +86,10 @@ export class DevicesComponentComponent implements OnInit {
       this.rnd = randomNum.toString();
       // Add hyphens 
       //this.rnd = this.rnd.substring(0,3) + '-' + this.rnd.substring(3,6) + '-' + this.rnd.substring(6);
-      return this.rnd
-    }
+      //return this.rnd
+      let myContainer = document.getElementById('phoneNumber') as HTMLInputElement;
+      myContainer.value = this.rnd;
 
+      this.update(deviceId, this.rnd)
+    }
 }
