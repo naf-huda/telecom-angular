@@ -46,7 +46,6 @@
                                         <div class="input-group">
                                             <input type="number" id="phoneNumber" class="form-control"
                                                 [(ngModel)]="device.deviceNumber" name="device.deviceNumber" #change>
-                                                
                                         </div>
 
                                     </div>
@@ -56,7 +55,7 @@
                                 <button type="submit" class="btn btn-outline-dark"
                                     (click)="update(device.deviceId,device.deviceNumber)">Save</button>
                                 <button type="button" class="btn btn-outline-dark"
-                                    (click)="Random(device.deviceNumber)">Random Phone Number </button>
+                                    (click)="Random(device.deviceId)">Random Phone Number </button>
                             </div>
                         </ng-template>
 
