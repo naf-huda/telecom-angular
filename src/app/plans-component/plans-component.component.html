@@ -15,7 +15,7 @@
             <div class="column">
                 <h2>Titan Single </h2>
                 <h3>$75</h3>
-                <h4>per month for a single line</h4>
+                <h4>per line/month</h4>
                 <div>
                     <ul>
                         <li>5G Nationwide Access</li>
@@ -41,22 +41,22 @@
                     </div>
                     <div class="modal-body">
                         <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-                            <div class="form-group">
-                                <label for="plan-number">Plan 1</label>
+                            <label for="plan-number">Plan Number</label>
                                 <div class="input-group">
-                                    <input id="plan-number" name="plan-number" class="form-control" value="1" [readonly]="true">
+                                    <input id="plaNumber" name="planNumber" class="form-control" ngModel required #planNumber="ngModel">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastname">Device Number</label>
+                            <label for="plan-number">Plan Cost</label>
                                 <div class="input-group">
-                                    <input id="lastname" name="lastname" class="form-control" ngModel>
+                                    <input id="planCost" name="planCost" class="form-control" ngModel required #planCost="ngModel">
                                 </div>
-                            </div>
+                            <label for="deviceNumber">Device Number</label>
+                                <div class="input-group">
+                                    <input id="deviceNumber" name="deviceNumber" class="form-control" type="number" ngModel required #deviceNumber="ngModel">
+                                </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+                        <button type="button" class="btn btn-outline-dark" (click)="saveFormSingleDevice(f)">Save</button>
                     </div>
                 </ng-template>
 
@@ -65,7 +65,7 @@
             <div class="column">
                 <h2>Titan Couple </h2>
                 <h3>$60</h3>
-                <h4>per month for two lines</h4>
+                <h4>per line/month</h4>
                 <div>
                     <ul>
                         <li>5G Nationwide Access</li>
@@ -91,28 +91,26 @@
                     </div>
                     <div class="modal-body">
                         <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-                            <div class="form-group">
-                                <label for="firstname">Plan 2</label>
+                            <label for="plan-number">Plan Number</label>
                                 <div class="input-group">
-                                    <input id="firstname" name="firstname" class="form-control" value="2" [readonly]="true">
+                                    <input id="plaNumber" name="planNumber" class="form-control" ngModel required #planNumber="ngModel">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastname">Device Number 1</label>
+                            <label for="plan-number">Plan Cost</label>
                                 <div class="input-group">
-                                    <input id="lastname" name="lastname" class="form-control" ngModel>
+                                    <input id="planCost" name="planCost" class="form-control" ngModel required #planCost="ngModel">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastname">Device Number 2</label>
+                            <label for="deviceNumber1">Device Number 1</label>
                                 <div class="input-group">
-                                    <input id="lastname" name="lastname" class="form-control" ngModel>
+                                    <input id="deviceNumber1" name="deviceNumber1" class="form-control" type="number" ngModel required #deviceNumber1="ngModel">
                                 </div>
-                            </div>
+                            <label for="deviceNumber2">Device Number 2</label>
+                                <div class="input-group">
+                                    <input id="deviceNumber2" name="deviceNumber2" class="form-control" type="number" ngModel required #deviceNumber2="ngModel">
+                                </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+                        <button type="button" class="btn btn-outline-dark" (click)="saveFormTwoDevices(f)">Save</button>
                     </div>
                 </ng-template>
 
@@ -121,7 +119,7 @@
             <div class="column">
                 <h2>Titan Family </h2>
                 <h3>$45</h3>
-                <h4>per month for four lines</h4>
+                <h4>per line/month</h4>
                 <div>
                     <ul>
                         <li>5G Nationwide Access</li>
@@ -147,34 +145,30 @@
                     </div>
                     <div class="modal-body">
                         <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-                            <div class="form-group">
-                                <label for="firstname">Plan 3</label>
-                                <div class="input-group">
-                                    <input id="firstname" name="firstname" class="form-control" value="3" [readonly]="true">
-                                </div>
+                            <label for="plan-number">Plan Number</label>
+                            <div class="input-group">
+                                <input id="plaNumber" name="planNumber" class="form-control" ngModel required #planNumber="ngModel">
                             </div>
-                            <div class="form-group">
-                                <label for="lastname">Device Number 1</label>
-                                <div class="input-group">
-                                    <input id="lastname" name="lastname" class="form-control" ngModel>
-                                </div>
+                        <label for="plan-number">Plan Cost</label>
+                            <div class="input-group">
+                                <input id="planCost" name="planCost" class="form-control" ngModel required #planCost="ngModel">
                             </div>
-                            <div class="form-group">
-                                <label for="lastname">Device Number 2</label>
-                                <div class="input-group">
-                                    <input id="lastname" name="lastname" class="form-control" ngModel>
-                                </div>
+                        <label for="deviceNumber1">Device Number 1</label>
+                            <div class="input-group">
+                                <input id="deviceNumber1" name="deviceNumber1" class="form-control" type="number" ngModel required #deviceNumber1="ngModel">
                             </div>
-                            <div class="form-group">
-                                <label for="lastname">Device Number 3</label>
-                                <div class="input-group">
-                                    <input id="lastname" name="lastname" class="form-control" ngModel>
-                                </div>
+                        <label for="deviceNumber2">Device Number 2</label>
+                            <div class="input-group">
+                                <input id="deviceNumber2" name="deviceNumber2" class="form-control" type="number" ngModel required #deviceNumber2="ngModel">
+                            </div>
+                        <label for="deviceNumber3">Device Number 3</label>
+                            <div class="input-group">
+                                <input id="deviceNumber3" name="deviceNumber3" class="form-control" type="number" ngModel required #deviceNumber3="ngModel">
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+                        <button type="button" class="btn btn-outline-dark" (click)="saveFormThreeDevices(f)">Save</button>
                     </div>
                 </ng-template>
 

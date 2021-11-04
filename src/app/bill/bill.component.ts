@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DeviceService } from '../device.service';
 import { Bill } from '../models/bill';
+import { Devices } from '../models/devices';
 
 @Component({
   selector: 'app-bill',
@@ -8,33 +10,18 @@ import { Bill } from '../models/bill';
 })
 export class BillComponent implements OnInit {
 
-  // WILL BE REPLACED BY DATA FROM SPRING
-  bill : Bill = {
-    phoneNumber: 10,
-    planNumber: 1000,
-    planCost : 100
-  }
-  bill2 : Bill = {
-    phoneNumber: 10,
-    planNumber: 1000,
-    planCost : 100
-  }
-  bill3 : Bill = {
-    phoneNumber: 10,
-    planNumber: 1000,
-    planCost : 100
-  }
-  bill4 : Bill = {
-    phoneNumber: 10,
-    planNumber: 1000,
-    planCost : 100
-  }
-
-  //totalCost = planCost
-  
-  constructor() { }
-
+  constructor(private service: DeviceService) { }
+  deviceList: Devices[] = []; 
+  totalCost: number = 0;
   ngOnInit(): void {
+    this.service.findAll().subscribe((data) => {
+      this.deviceList = data;
+      console.log(this.deviceList);
+      this.deviceList.forEach( (device) => {
+        console.log(device);
+        this.totalCost += device.planCost;
+      });
+    });
   }
 
 }

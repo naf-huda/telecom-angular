@@ -3,6 +3,7 @@ import { DeviceService } from '../device.service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Devices } from '../models/devices';
 import { UpdatedDevice } from '../models/updated-device';
+import { DeleteDevice } from '../models/deleteDevice';
 
 @Component({
   selector: 'app-devices-component',
@@ -11,9 +12,6 @@ import { UpdatedDevice } from '../models/updated-device';
 })
 
 export class DevicesComponentComponent implements OnInit {
-
-  @ViewChild('change') deviceNumber:string=''
-
 
   closeResult: string = '';
 
@@ -25,11 +23,7 @@ export class DevicesComponentComponent implements OnInit {
       console.log(this.deviceList);
     });
   }
-    /*this.deviceService.getAllPlans().subscribe(result => {
-      // result will contain our returned array
-      this.devicesList = result;
-    });*/
-
+  
     open(EditDevice:any) {
       this.modalService.open(EditDevice, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
         this.closeResult = `Closed with: ${result}`;
@@ -50,6 +44,20 @@ export class DevicesComponentComponent implements OnInit {
 
     device: Devices = new Devices();
 
+    deletedDevice: DeleteDevice = {
+      planId: this.device.planId
+    }
+
+    // delete()
+    delete(planId: number): void {
+      this.deletedDevice.planId = planId
+      console.log(planId);
+      this.service.deleteDevice(this.deletedDevice).subscribe(result => {
+        console.log(result);
+      })
+      this.modalService.dismissAll("Deleted Plan!");
+    }
+
     updatedDevice: UpdatedDevice = {
       deviceId: this.device.deviceId,
       deviceNumber: this.device.deviceNumber
@@ -61,6 +69,7 @@ export class DevicesComponentComponent implements OnInit {
       this.service.updatePhoneNumber(this.updatedDevice).subscribe(result => {
         console.log(result);
       });
+      this.modalService.dismissAll("Updated!");
     }
 
     rnd: string = '';

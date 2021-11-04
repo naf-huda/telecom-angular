@@ -47,6 +47,7 @@
                               </form>
                             </div>
                             <div class="modal-footer">
+                              <button type="button" class="btn btn-outline-dark" (click)="delete(device.planId)">Delete</button>
                               <button type="button" class="btn btn-outline-dark" (click)="update(device.deviceId,device.deviceNumber)">Save</button>
                               <button type="button" class="btn btn-outline-dark" (click)="Random(device.deviceNumber)">Random Phone Number </button>
                             </div>

@@ -16,29 +16,14 @@
             </thead>
 
             <tbody>
-                <tr>
-                    <td>{{bill.phoneNumber}}</td>
-                    <td>{{bill.planNumber}}</td>
-                    <td>{{bill.planCost}}</td>
-                </tr>
-                <tr>
-                    <td>{{bill2.phoneNumber}}</td>
-                    <td>{{bill2.planNumber}}</td>
-                    <td>{{bill2.planCost}}</td>
-                </tr>
-                <tr>
-                    <td>{{bill3.phoneNumber}}</td>
-                    <td>{{bill3.planNumber}}</td>
-                    <td>{{bill3.planCost}}</td>
-                </tr>
-                <tr>
-                    <td>{{bill4.phoneNumber}}</td>
-                    <td>{{bill4.planNumber}}</td>
-                    <td>{{bill4.planCost}}</td>
+                <tr *ngFor="let device of deviceList">
+                    <td>{{device.deviceNumber}}</td>
+                    <td>{{device.planNumber}}</td>
+                    <td>{{device.planCost}}</td>
                 </tr>
 
                 <td id="Total">Bill Cost</td>
-                <td id="Total">totalCost</td>
+                <td id="Total">{{totalCost}}</td>
             </tbody>
 
             <!-- Total Bill Box -->
