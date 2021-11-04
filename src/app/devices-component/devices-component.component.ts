@@ -14,10 +14,10 @@ export class DevicesComponentComponent implements OnInit {
 
   @ViewChild('change') deviceNumber:string=''
 
-
   closeResult: string = '';
 
-  constructor(private service: DeviceService, private modalService: NgbModal) { }   
+  constructor(private service: DeviceService, private modalService: NgbModal) { }
+
   deviceList: Devices[] = []; 
   ngOnInit(): void {
     this.service.findAll().subscribe((data) => {
@@ -61,7 +61,8 @@ export class DevicesComponentComponent implements OnInit {
       this.service.updatePhoneNumber(this.updatedDevice).subscribe(result => {
         console.log(result);
       });
-    }
+      this.modalService.dismissAll("Saved number"); // closes the form after submitting, and updates the table 
+    } 
 
     rnd: string = '';
     
@@ -76,5 +77,4 @@ export class DevicesComponentComponent implements OnInit {
       //this.rnd = this.rnd.substring(0,3) + '-' + this.rnd.substring(3,6) + '-' + this.rnd.substring(6);
       return this.rnd
     }
-
 }
