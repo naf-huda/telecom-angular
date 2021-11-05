@@ -12,23 +12,15 @@ import { UpdatedDevice } from './models/updated-device';
 })
 export class DeviceService {
 
-  url = 'http://20.85.134.49:8080/telecom/v1';
+  url = 'https://20.85.134.49:8080/telecom/v1';
 
-  postUrlSingleDevice = 'http://20.85.134.49:8080/telecom/v1/device'
+  postUrlSingleDevice = 'https://20.85.134.49:8080/telecom/v1/device'
 
-  postUrlMultipleDevices = 'http://20.85.134.49:8080/telecom/v1/devices'
+  postUrlMultipleDevices = 'https://20.85.134.49:8080/telecom/v1/devices'
 
-  putUrl = 'http://20.85.134.49:8080/telecom/v1/device'
+  putUrl = 'https://20.85.134.49:8080/telecom/v1/device'
 
-/*
-  url = 'http://localhost:8080/telecom/v1';
 
-  postUrlSingleDevice = 'http://localhost:8080/telecom/v1/device'
-
-  postUrlMultipleDevices = 'http://localhost:8080/telecom/v1/devices'
-
-  putUrl = 'http://localhost:8080/telecom/v1/device'
-  */
 
   constructor(private httpClient : HttpClient) { }
 
