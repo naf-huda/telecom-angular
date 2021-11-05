@@ -1,18 +1,98 @@
-<table>
-    <thead>
-        <tr>
-            <td>ID</td>
-            <td>Phone Number</td>
-        </tr>
-    </thead>
+<div class="initpage">
+    <div class="container-fluid DevicesPage">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <td>Device #</td>
+                    <td>Phone Number</td>
+                    <td>Manage</td>
+                </tr>
+            </thead>
 
-    <tbody>
-        <tr>        <!-- *ngFor="let device of devices" --> <!-- IMPLEMENT NGFOR WHEN DATABASE IS CONNECTED -->
-            <td>{{device.id}}</td>
-            <td>{{device.phoneNum}}</td>
-        </tr>
-    </tbody>
-</table>
+            <tbody>
+                <tr *ngFor="let device of deviceList">
+                    <td>{{device.deviceId}}</td>
+                    <td>{{device.deviceNumber}}</td>
+                    <!-- *ngFor="let device of devices" -->
+                    <!-- IMPLEMENT NGFOR WHEN DATABASE IS CONNECTED -->
+
+                    <td>
+                        <!-- Edit Modal -->
+                        <button class="btn btn-dark" (click)="open(EditDevice)">
+                            <!-- data-toggle="modal" data-target="#planModal1" -->
+                            <i id="EditButton" class="EditButtonClass"></i>
+                            Edit
+                        </button>
+
+                        <ng-template #EditDevice let-modal>
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modal-basic-title">Change Phone Number</h4>
+                                <button type="button" class="close" aria-label="Close"
+                                    (click)="modal.dismiss('Cross click')">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+
+                                        <label for="id">Device ID</label>
+                                        <div class="input-group">
+                                            <input type="number" id="id" class="form-control"
+                                                [(ngModel)]="device.deviceId" name="device.deviceId" [readonly]="true">
+                                        </div>
+
+                                        <label for="phoneNumber">Phone Number</label>
+                                        <div class="input-group">
+                                            <input type="number" id="phoneNumber" class="form-control"
+                                                [(ngModel)]="device.deviceNumber" name="device.deviceNumber" #change>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-outline-dark" (click)="delete(device.planId)">Delete</button>
+                              <button type="submit" class="btn btn-outline-dark"
+                                    (click)="update(device.deviceId,device.deviceNumber)">Save</button>
+                                <button type="button" class="btn btn-outline-dark"
+                                    (click)="Random(device.deviceId)">Random Phone Number </button>
+                            </div>
+                        </ng-template>
+
+                        <!-- Edit Modal Form 
+                        <div class="modal" id="Edit" tabindex="-1" aria-labelledby="EditLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="EditLable">Plan 1</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        Example text
+                                         NEED TO LINK DEVICE# AND PLAN# FOR DISPLAY IN A FORM
+                                    DEVICE# CAN BE CHANGED BUT PLAN# CANNOT BE CHANGED
+                                
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button id="DeleteDevice" type="button"
+                                            class="btn btn-secondary">Delete</button>
+                                        <button type="button" class="btn btn-primary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <!-- 
     CLICKING A DEVICE WILL OPEN A FORM FOR THEM TO CHANGE THE PLAN AND NUMBER 

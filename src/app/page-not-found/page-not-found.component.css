@@ -18,8 +18,15 @@
       margin-right: auto;
   }
 
+  .Page404 {
+    background-color: transparent;
+    padding-top: 50px;
+    padding-bottom: 90px;
+  }
+
   @media screen and (max-width: 700px) {
       .PNFPage {
           width: auto;
+          height: auto;
       }
   }

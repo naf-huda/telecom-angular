@@ -1,0 +1,30 @@
+.DevicesPage {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid gray;
+    background-color: rgb(246, 246, 246);
+    padding: 35px;
+    position: sticky;
+    width: 1300px;
+    height: 700px;
+    border-radius: 18px;
+    font-size: x-large;
+  }
+
+  .initpage {
+    background-color: transparent;
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+
+  @media screen and (max-width: 1300px) {
+    .DevicesPage {
+        width: auto;
+        height: auto;
+    }
+
+    .initpage {
+      padding-top: auto;
+      padding-bottom: 600px;
+    }
+  }

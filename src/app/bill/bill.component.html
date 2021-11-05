@@ -1,13 +1,34 @@
-<table>
-    <thead>
-        <tr>
-            <td>Monthly Cost</td>
-        </tr>
-    </thead>
+<head>
+    <meta charset="ISO-8859-1" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bill.component.css">
+</head>
 
-    <tbody>
-        <tr>        
-            <td>{{bill.cost}}</td>
-        </tr>
-    </tbody>
-</table>
+
+<div class="initpage">
+    <div class="container-fluid BillPage">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <td>Device Phone #</td>
+                    <td>Plan #</td>
+                    <td>Cost</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let device of deviceList">
+                    <td>{{device.deviceNumber}}</td>
+                    <td>{{device.planNumber}}</td>
+                    <td>{{device.planCost}}</td>
+                </tr>
+
+                <td id="Total">Bill Cost</td>
+                <td id="Total">{{totalCost}}</td>
+            </tbody>
+
+            <!-- Total Bill Box -->
+
+        </table>
+
+    </div>
+</div>

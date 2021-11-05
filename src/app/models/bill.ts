@@ -1,7 +1,11 @@
 export class Bill {
-    cost : number
+    planCost : number;
+    phoneNumber : number;
+    planNumber : number;
 
-    constructor(cost = 0) {
-        this.cost = cost;
+    constructor(planCost = 0, phoneNumber = 0, planNumber = 0) {
+        this.planCost = planCost;
+        this.phoneNumber = phoneNumber;
+        this.planNumber = planNumber;
     }
 }

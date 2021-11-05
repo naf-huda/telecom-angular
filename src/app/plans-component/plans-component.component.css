@@ -1,0 +1,66 @@
+.Plans {
+    border: 1px solid gray;
+    background-color: rgb(246, 246, 246);
+    padding: 35px;
+    position: relative;
+    margin-top: 50px;
+    width: 1100px;
+    height: 450px;
+    border-radius: 18px;
+    font-size: x-large;
+  }
+
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    margin-top: 10px;
+    height: 300px;
+    border-top: 10px solid teal;
+    border-left: 10px solid teal;
+    border-right: 10px solid teal;
+    border-bottom: 10px solid teal;
+
+  }
+  
+  .column p {
+    text-align: center;
+    width: 90%;
+  }
+
+  h2 {
+    text-decoration: underline;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  h3  {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  h4 {
+    text-align: center;
+    font-size: 17px;
+  }
+
+  li {
+    font-size: 14px;
+  }
+
+  .initpage {
+    background-color: transparent;
+    padding-top: 50px;
+    padding-bottom: 250px;
+  }
+  .btn-text-center{
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1300px) {
+    .Plans {
+        width: auto;
+        height: auto;
+    }
+  }

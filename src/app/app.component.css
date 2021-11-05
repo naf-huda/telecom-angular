@@ -7,3 +7,12 @@
 .navbar {
   padding: 20px;
 }
+
+.box {
+  size: 100%;
+  margin-top: 0px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("https://drscdn.500px.org/photo/63514531/m%3D900/v2?sig=42c6d9bff7567a2cbd980a355b98c60bd082d6075799eb77af0dea6dbc702f22");
+}
